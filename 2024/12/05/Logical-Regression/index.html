@@ -14,7 +14,7 @@
 <meta property="og:description" content="前置课程：KNN （K值选择）LinearRegression线性回归 vs 逻辑回归（e.g. Boston房价的一个量）模型的建立与求解——理解逻辑回归分类（classification） 通过目标函数来刻画预测标签与真实标签之间的差距 示例：sklearn -&gt; LogisticRegression 多变量与多分类——理解多变量一个样本点有多个特征属性 多变量与多分类——理解多分类On">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-12-05T05:51:02.000Z">
-<meta property="article:modified_time" content="2024-12-15T13:26:13.871Z">
+<meta property="article:modified_time" content="2024-12-19T08:22:57.018Z">
 <meta property="article:author" content="Jianhong Cao">
 <meta name="twitter:card" content="summary">
   
@@ -116,6 +116,17 @@
 <p>$GINI &#x3D; 1 - $ $\Sigma$ $p(i)^2$</p>
 <p>$Entropy &#x3D; -$ $\Sigma$ $p(i)log p(i)$</p>
 <h3 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h3><p>信息增益Gain</p>
+<hr>
+<h1 id="20241219"><a href="#20241219" class="headerlink" title="20241219"></a>20241219</h1><h1 id="降维：PCA"><a href="#降维：PCA" class="headerlink" title="降维：PCA"></a>降维：PCA</h1><h2 id="why-to-do-PCA"><a href="#why-to-do-PCA" class="headerlink" title="why to do PCA"></a>why to do PCA</h2><p>机器学习算法的复杂度和数据的维数有着密切关系，甚至呈现指数级关联<br>实际机器学习中处理成千上万甚至几十万维的情况也并不罕见，但机器学习的资源消耗是不可接受的，必须对数据进行降维<br>降维当然意味着信息的丢失，要减少丢失的信息</p>
+<h2 id="PCA基本思想"><a href="#PCA基本思想" class="headerlink" title="PCA基本思想"></a>PCA基本思想</h2><p>在降维的同时将信息的损失尽量降低  </p>
+<h2 id="主成分分析"><a href="#主成分分析" class="headerlink" title="主成分分析"></a>主成分分析</h2><h3 id="主成分的特点"><a href="#主成分的特点" class="headerlink" title="主成分的特点"></a>主成分的特点</h3><ul>
+<li>主成分是原变量的线性组合  </li>
+<li>各个主成分之间互不相关，不同的主成分轴之间相互正交  </li>
+<li>主成分按照方差的大小依次排列，第一主成分对应最大的方差（特征值）  </li>
+<li>每个主成分的均值为0</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line">from sklearn.neighbors import KNeighborsClassifier</span><br><span class="line">from sklearn.model_selection import train_test_split</span><br><span class="line">data = pd.read_csv(<span class="string">&#x27;./iris.csv&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(data.head())</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
